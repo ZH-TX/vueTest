@@ -1,20 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
+
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <router-link to="/about">About</router-link>|
+      <router-link to="/test">Test</router-link>|
+      <router-link to="/toast">Toast</router-link>|
+      <router-link to="/breadcrumb">Bread</router-link>|
+    </div> -->
+
+    <!-- <router-view/> -->
   </div>
 </template>
 
+
+
 <style>
+@import "~@/assets/css/normalize.css";
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2c3e50; */
 }
 
 #nav {
